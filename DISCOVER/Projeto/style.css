@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+:root { /*forma mais comum de declarar variaveis em css*/
+    --switch-bg-url: url(/assets/moon-stars.svg)
+}
+
+* { /*pode ser usado variaveis assim*/
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--text-color, #ffffff);
+    border: var(--border-color, rgba(255, 255, 255, 0.957));
+    
+}
+
+body {
+    color: var(--text-color);
+    /*background-image: url(/assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+    /*shorthand  color image repeat position /size*/
+    background: url(assets/bg-mobile.jpg) no-repeat top center /cover;
+}
+
+#container {
+    width: 360px;
+    margin: auto;
+    padding: 56px 0px 0px 0px;
+}
+
+#profile {
+    text-align: center;
+    font-weight: 500;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+    padding: 8px;
+}
+
+#switch {    
+    width: 64px;
+    height: 24px;
+    margin: auto;
+    position: relative; /* para que a lua fique dentro desta div, o absolute libera o z index que para isso colocamos acima da track*/
+}
+
+#switch > button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0px;
+    border-radius: 50%;
+
+    position: absolute; /*essa propriedade faz com que a imagem possa navegar em qualquer lugar da pagina*/
+    z-index: 1;
+    transform: translateY(-50%);/* faz com que metade da imagem passe do limite superior da box da track*/
+    top: 50%; /*faz com que o elemento fique a 50% do top, assim alinhando a imagem ao track*/
+    left: 0;
+}
+
+.light #switch > button {
+    right: 0;
+    left: initial;
+}
+
+#switch > span {
+    display: block;
+    border-radius: 9999px;
+    width: 64px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255, 0.5);
+}
+
+li {
+    list-style: none;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-align: center;
+    margin: 16px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+
+    transition: all .5s; /*condiciona o hover ao tempo, no lugar de all posso escolher o item ex:border e tambem carrega em sequencia na pagina nos elementos*/
+}
+
+li:hover{
+    border: 3px solid white;
+    background: rgba(255, 255, 255, 0.347);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+#icons {
+    padding: 50px 0px 0px 0px;
+    text-align: center;
+}
+
+ion-icon {
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 20%;
+    transition: all 0.5s;
+}
+
+ion-icon:hover {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.259);
+    font-size: 48px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.348);
+}
+
+footer {
+    margin: 50px 0px 0px 0px;
+    text-align: center;
+}
+
+#criador{
+    font-size: 10px;
+}
+
+#criador:hover{
+    font-size: 20px;
+}
+
+.light {
+    background: url(assets/bg-mobile-light.jpg) no-repeat top center /cover;
+    --text-color:black;
+    --border-color:black;
+    --switch-bg-url: url(/assets/sun.svg)
+}
+
+#divTheme {
+    text-align: center;
+    margin: 10px;
+}
+
+#checkTheme {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
